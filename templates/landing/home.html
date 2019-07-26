@@ -1,0 +1,70 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="section-top">
+        <img src="{% static 'img/bg_image.jpg' %}" class="img-responsive">
+    </div>
+    <div class="section section1">
+        <div class="container">
+            <div class="row">
+             <h1 class="text-center">
+                 Весь ассортимент
+             </h1>
+                {% for excursion_image in excursions_images %}
+                    {% include 'landing/excursion_item.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+       <div class="section section2 church-container">
+        <div class="container">
+            <div class="row">
+             <h1 class="text-center">
+                 Храмы мира
+             </h1>
+                {% for excursion_image in excursions_images_churches %}
+                    {% include 'landing/excursion_item.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+       <div class="section section3 panorama-container">
+        <div class="container">
+            <div class="row">
+             <h1 class="text-center">
+                 Панорамы
+             </h1>
+                {% for excursion_image in excursions_images_panoramas %}
+                            <div class="col-lg-6">
+                        <div class="excursion.item">
+                            <div>
+                                <a href="{% url 'excursion' excursion_image.excursion.id %}">
+                                    <img src="{{ excursion_image.image.url }}" class="img-responsive-items">
+                                </a>
+                            </div>
+                            {% if excursion_image.excursion.discount %}
+                                <div class="discount-container">
+                                    <span>{{excursion_image.excursion.discount}}%</span>
+                                </div>
+                            {%  endif %}
+                            <h4>{{ excursion_image.excursion.name }}</h4>
+                            <p>
+                                {{ excursion_image.excursion.description|truncatechars_html:250 }}
+                            </p>
+                            <div>
+                                {{ excursion_image.excursion.price }} RUB
+                            </div>
+                            <div class="add-to-cart-btn">
+                                <button class="btn btn-success">
+                                    Посмотреть
+                                </button>
+                            </div>
+                        </div>
+                     </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

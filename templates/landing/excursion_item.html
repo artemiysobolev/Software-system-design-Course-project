@@ -1,0 +1,28 @@
+        <div class="col-lg-4">
+                        <div class="excursion.item">
+                            <div>
+                                <a href="{% url 'excursion' excursion_image.excursion.id %}">
+                                    <img src="{{ excursion_image.image.url }}" class="img-responsive-items">
+                                </a>
+                            </div>
+                            {% if excursion_image.excursion.discount %}
+                                <div class="discount-container">
+                                    <span>{{excursion_image.excursion.discount}}%</span>
+                                </div>
+                            {%  endif %}
+                            <h4>{{ excursion_image.excursion.name }}</h4>
+                            <p>
+                                {{ excursion_image.excursion.description|truncatechars_html:250 }}
+                            </p>
+                            <div>
+                                {{ excursion_image.excursion.price }} RUB
+                            </div>
+                            <div class="add-to-cart-btn">
+                                <a href="{% url 'excursion' excursion_image.excursion.id %}">
+                                    <button class="btn btn-success">
+                                        Посмотреть
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                     </div>

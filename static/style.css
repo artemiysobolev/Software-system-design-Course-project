@@ -1,0 +1,106 @@
+
+html, body,title {
+    height: 100%;
+    max-height: 100%;
+    font-family: Roboto, sans-serif;
+    background-color: #edeef0;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
+.wrapper-content {
+    overflow: auto;
+    padding-bottom: 180px;
+}
+
+.footer {
+    position: relative;
+    margin-top: -180px;
+    height: 180px;
+    clear: both;
+    background-color: white;
+}
+
+.section-top {
+    margin-bottom: 20px;
+}
+
+.excursion-description-tabs {
+    padding: 10px;
+}
+
+
+.excursion\.item {
+    height: 450px;
+    background-color: white;
+    border: 1px solid lightgray;
+    position: relative;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.section h1 {
+    margin-bottom: 40px;
+}
+
+
+.add-to-cart-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-responsive-items {
+    width: 200px;
+    height: 200px;
+}
+
+.just-text {
+    text-align: center;
+}
+
+.discount-container {
+    position: absolute;
+    top: 10%;
+    background: darkgreen;
+    width: 30%;
+    color: white;
+    font-weight: 700;
+    padding: 3px;
+}
+
+.product-description-tabs {
+    padding: 10px;
+}
+
+.navbar-top {
+    min-height: 50px;
+    height: 20px;
+    color: lightgray;
+}
+
+.basket-container {
+    position: relative;
+    width: 200px;
+    padding: 15px 10px;
+}
+
+.basket-items {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    z-index: 10;
+    background-color: dimgray;
+}
